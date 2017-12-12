@@ -21,9 +21,9 @@ class Seed
       reviews = ReviewsRating.create!(
         review: Faker::Lovecraft.paragraph,
         rating: Faker::Number.between(1, 5),
-        destination_id: Faker::Number.digit
+        destination_id: Faker::Number.between(1, 20)
       )
-      puts "Destination #{k}: City is rated #{reviews.rating}. Rick Steves calls it '#{reviews.review}'."
+      puts "Destination #{k}: City is rated #{reviews.rating}. Rick Steves calls it '#{reviews.review}'. And it's ID is '#{reviews.destination_id}'."
     end
   end
 end
