@@ -1,7 +1,11 @@
 class DestinationsController < ApplicationController
 
   def index
-    @destinations = Destination.all
+    if params[:search]
+      @destinations = Destination.search(params[:search])
+    else
+      @destinations = Destination.all
+    end
     json_response(@destinations)
   end
 
@@ -11,13 +15,17 @@ class DestinationsController < ApplicationController
   end
 
   def create
-    @destination = Destination.create(destination_params)
-    json_response(@destination)
+    @destination = Destination.create!(destination_params)
+    json_response(@destination, :created)
   end
 
   def update
     @destination = Destination.find(params[:id])
-    @destination.update(destination_params)
+    if @destination.update!(destination_params)
+      render status: 200, json: {
+       message: "Your destination has been updated successfully."
+       }
+    end
   end
 
   def destroy
