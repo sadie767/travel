@@ -1,13 +1,14 @@
-class Destination < ActiveRecord::Base
+class Destination < ApplicationRecord
   has_many :reviews_ratings
 
-  validates :city, :presence => true
+  # validates :city, :presence => true
+  # validates :country, :presence => true
 
-  def self.search(x)
-    where("city ILIKE ? OR country ILIKE ?", "%#{x}%", "%#{x}%")
-  end
+  # def self.search(x)
+  #   where("city ILIKE ? OR country ILIKE ?", "%#{x}%", "%#{x}%")
+  # end
 
-  # scope :search, ->(country) {(
-  # where("country ilike ?", country )
-  # )}
+  scope :search, ->(x) {(
+  where("city ILIKE ? OR country ILIKE ?", "%#{x}%", "%#{x}%")
+  )}
 end
