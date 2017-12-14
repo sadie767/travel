@@ -1,3 +1,6 @@
+user = User.create(email: 'user@example.com', nickname: 'UOne', name: 'User One', password: "monkey67")
+puts "My user email is #{user.email}"
+
 class Seed
 
   def self.begin
