@@ -1,24 +1,55 @@
-# README
+## Key Features :key:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Destinations - Create, Update, return all, and return specific destination
+  - Returns destination in JSON format.
+* Reviews - Create, Update, return all, and return specific review for destination
+  - Returns review in JSON format
+* Search - Returns a list of destinations with a API call
+* API call is returned in JSON format
+* Readable API call messages that give user good feedback
+* Option to seed fake data
 
-Things you may want to cover:
+## How To Use
 
-* Ruby version
+```bash
+# Clone this repository
+$ git clone https://github.com/sadie767/travel
 
-* System dependencies
+# Go into the repository
+$ cd travel
 
-* Configuration
+# Install dependencies
+$ bundle
 
-* Database creation
+# Run the app
+$ rails s
 
-* Database initialization
+# open postman and make a sample post call to
+http://localhost:3000/destinations/
 
-* How to run the test suite
+# Read the JSON output
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Download :arrow_down:
 
-* ...
+You can [download](https://www.getpostman.com/) latest installable version of Postman.
+
+## Technologies Used :computer:
+
+This software uses code from several open source packages.
+
+- [Ruby](http://ruby-doc.org/)
+- [Rails](http://guides.rubyonrails.org/)
+- [Faker](https://github.com/stympy/faker)
+- [Rspec](https://github.com/rspec/rspec-rails)
+- [Simplecov](https://github.com/colszowka/simplecov)
+- [PostMan](https://www.getpostman.com/)
+
+
+### Support and contact details
+
+_If you have any questions please email [me](biffbangpow767@yahoo.com)._
+
+### License
+
+_© 2017 travel_
